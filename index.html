@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 금융투자 에이전트 설문조사</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 AI 금융투자 에이전트 설문조사</h1>
+            <p class="subtitle">AI 기반 금융 투자 서비스에 대한 귀하의 의견을 들려주세요</p>
+        </div>
+        
+        <form id="surveyForm">
+            <!-- Part 1: 응답자 기본 정보 -->
+            <section class="part">
+                <h2>📋 Part 1: 응답자 기본 정보</h2>
+                
+                <div class="question">
+                    <label>1. 귀하의 성별은?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">① 남성</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">② 여성</label>
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">③ 기타</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label>2. 귀하의 연령대는?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="age20" name="age" value="20s">
+                        <label for="age20">① 20대</label>
+                        <input type="radio" id="age30" name="age" value="30s">
+                        <label for="age30">② 30대</label>
+                        <input type="radio" id="age40" name="age" value="40s">
+                        <label for="age40">③ 40대</label>
+                        <input type="radio" id="age50" name="age" value="50s">
+                        <label for="age50">④ 50대</label>
+                        <input type="radio" id="age60" name="age" value="60s">
+                        <label for="age60">⑤ 60대 이상</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label>3. 귀하의 직업은?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="student" name="job" value="student">
+                        <label for="student">① 학생</label>
+                        <input type="radio" id="employee" name="job" value="employee">
+                        <label for="employee">② 직장인</label>
+                        <input type="radio" id="business" name="job" value="business">
+                        <label for="business">③ 자영업</label>
+                        <input type="radio" id="finance" name="job" value="finance">
+                        <label for="finance">④ 금융업 종사자</label>
+                        <input type="radio" id="jobOther" name="job" value="other">
+                        <label for="jobOther">⑤ 기타</label>
+                        <input type="text" id="jobOtherText" name="jobOtherText" placeholder="직업을 입력해주세요" style="display:none;">
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label>4. 귀하의 월 평균 소득은?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="income1" name="income" value="under200">
+                        <label for="income1">① 200만원 미만</label>
+                        <input type="radio" id="income2" name="income" value="200-400">
+                        <label for="income2">② 200-400만원</label>
+                        <input type="radio" id="income3" name="income" value="400-600">
+                        <label for="income3">③ 400-600만원</label>
+                        <input type="radio" id="income4" name="income" value="600-800">
+                        <label for="income4">④ 600-800만원</label>
+                        <input type="radio" id="income5" name="income" value="over800">
+                        <label for="income5">⑤ 800만원 이상</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label>5. 귀하의 투자 경험은?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="exp1" name="experience" value="none">
+                        <label for="exp1">① 전혀 없음</label>
+                        <input type="radio" id="exp2" name="experience" value="under1">
+                        <label for="exp2">② 1년 미만</label>
+                        <input type="radio" id="exp3" name="experience" value="1-3">
+                        <label for="exp3">③ 1-3년</label>
+                        <input type="radio" id="exp4" name="experience" value="3-5">
+                        <label for="exp4">④ 3-5년</label>
+                        <input type="radio" id="exp5" name="experience" value="over5">
+                        <label for="exp5">⑤ 5년 이상</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label>6. 현재 투자하고 있는 금융상품은? (복수 선택 가능)</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="stock" name="investments" value="stock">
+                        <label for="stock">① 주식</label>
+                        <input type="checkbox" id="fund" name="investments" value="fund">
+                        <label for="fund">② 펀드</label>
+                        <input type="checkbox" id="deposit" name="investments" value="deposit">
+                        <label for="deposit">③ 예·적금</label>
+                        <input type="checkbox" id="realestate" name="investments" value="realestate">
+                        <label for="realestate">④ 부동산</label>
+                        <input type="checkbox" id="crypto" name="investments" value="crypto">
+                        <label for="crypto">⑤ 암호화폐</label>
+                        <input type="checkbox" id="noInvest" name="investments" value="none">
+                        <label for="noInvest">⑥ 투자하지 않음</label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Part 2: AI 기술 친숙도 -->
+            <section class="part">
+                <h2>🤖 Part 2: AI 기술 친숙도</h2>
+                
+                <div class="question">
+                    <label>7. 다음 AI 기술들을 사용해본 경험이 있습니까? (복수 선택 가능)</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="chatbot" name="aiExperience" value="chatbot">
+                        <label for="chatbot">① ChatGPT, Bard 등 AI 챗봇</label>
+                        <input type="checkbox" id="roboAdvisor" name="aiExperience" value="roboAdvisor">
+                        <label for="roboAdvisor">② 로보어드바이저 (자동 투자 서비스)</label>
+                        <input type="checkbox" id="stockApp" name="aiExperience" value="stockApp">
+                        <label for="stockApp">③ AI 기반 주식 추천 앱</label>
+                        <input type="checkbox" id="bankAI" name="aiExperience" value="bankAI">
+                        <label for="bankAI">④ 은행의 AI 상담 서비스</label>
+                        <input type="checkbox" id="newsAI" name="aiExperience" value="newsAI">
+                        <label for="newsAI">⑤ AI 경제 뉴스 분석 서비스</label>
+                        <input type="checkbox" id="noAI" name="aiExperience" value="none">
+                        <label for="noAI">⑥ 사용한 적 없음</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label>8. AI 기술에 대한 귀하의 전반적인 관심도는?</label>
+                    <div class="scale-group">
+                        <span class="scale-label">전혀 관심없다</span>
+                        <div class="scale-options">
+                            <input type="radio" id="interest1" name="aiInterest" value="1">
+                            <label for="interest1">1</label>
+                            <input type="radio" id="interest2" name="aiInterest" value="2">
+                            <label for="interest2">2</label>
+                            <input type="radio" id="interest3" name="aiInterest" value="3">
+                            <label for="interest3">3</label>
+                            <input type="radio" id="interest4" name="aiInterest" value="4">
+                            <label for="interest4">4</label>
+                            <input type="radio" id="interest5" name="aiInterest" value="5">
+                            <label for="interest5">5</label>
+                            <input type="radio" id="interest6" name="aiInterest" value="6">
+                            <label for="interest6">6</label>
+                            <input type="radio" id="interest7" name="aiInterest" value="7">
+                            <label for="interest7">7</label>
+                        </div>
+                        <span class="scale-label">매우 관심있다</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Part 3: AI 시나리오 -->
+            <section class="part scenario">
+                <h2>💰 Part 3: AI 금융투자 에이전트 시나리오</h2>
+                <div class="scenario-box">
+                    <h3>다음 상황을 상상해보세요:</h3>
+                    <div class="scenario-content">
+                        <h4>"스마트 AI 금융투자 에이전트"는 다음과 같이 작동합니다:</h4>
+                        <ul>
+                            <li>🎯 <strong>투자 목표 설정</strong>: 사용자의 투자 목표, 위험성향, 투자기간을 파악합니다</li>
+                            <li>📊 <strong>시장 분석</strong>: 실시간으로 국내외 경제지표, 기업실적, 뉴스를 종합 분석합니다</li>
+                            <li>🧠 <strong>자율 투자 판단</strong>: AI가 스스로 시장 상황을 해석하고 최적의 투자 결정을 내립니다</li>
+                            <li>💸 <strong>자동 매매 실행</strong>: 주식, 펀드, ETF 등을 AI가 직접 매수/매도합니다</li>
+                            <li>⚖️ <strong>포트폴리오 관리</strong>: 리스크를 분산하고 수익률을 최대화하도록 자산을 재배분합니다</li>
+                            <li>📈 <strong>학습 능력</strong>: 시장 변화와 투자 결과를 학습하여 투자 전략을 지속적으로 개선합니다</li>
+                        </ul>
+                        <p><strong>사용자는 투자 목표만 설정하면, AI가 독립적으로 분석하고 투자 결정을 실행하여 결과를 보고합니다.</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Part 4: 핵심 측정 변수 -->
+            <section class="part">
+                <h2>📊 Part 4: 핵심 측정 변수</h2>
+                
+                <div class="subsection">
+                    <h3>A. 신뢰도 (Trust)</h3>
+                    <p><strong>9. AI 금융투자 에이전트의 투자 능력에 대한 신뢰도를 평가해주세요:</strong></p>
+                    
+                    <div class="question-sub">
+                        <label>9-1. 복잡한 시장 상황을 정확히 분석할 것이다</label>
+                        <div class="scale-group">
+                            <span class="scale-label">전혀 신뢰하지 않는다</span>
+                            <div class="scale-options">
+                                <input type="radio" id="trust1_1" name="trust1" value="1">
+                                <label for="trust1_1">1</label>
+                                <input type="radio" id="trust1_2" name="trust1" value="2">
+                                <label for="trust1_2">2</label>
+                                <input type="radio" id="trust1_3" name="trust1" value="3">
+                                <label for="trust1_3">3</label>
+                                <input type="radio" id="trust1_4" name="trust1" value="4">
+                                <label for="trust1_4">4</label>
+                                <input type="radio" id="trust1_5" name="trust1" value="5">
+                                <label for="trust1_5">5</label>
+                                <input type="radio" id="trust1_6" name="trust1" value="6">
+                                <label for="trust1_6">6</label>
+                                <input type="radio" id="trust1_7" name="trust1" value="7">
+                                <label for="trust1_7">7</label>
+                            </div>
+                            <span class="scale-label">매우 신뢰한다</span>
+                        </div>
+                    </div>
+
+                    <div class="question-sub">
+                        <label>9-2. 적절한 투자 타이밍을 판단할 것이다</label>
+                        <div class="scale-group">
+                            <span class="scale-label">전혀 신뢰하지 않는다</span>
+                            <div class="scale-options">
+                                <input type="radio" id="trust2_1" name="trust2" value="1">
+                                <label for="trust2_1">1</label>
+                                <input type="radio" id="trust2_2" name="trust2" value="2">
+                                <label for="trust2_2">2</label>
+                                <input type="radio" id="trust2_3" name="trust2" value="3">
+                                <label for="trust2_3">3</label>
+                                <input type="radio" id="trust2_4" name="trust2" value="4">
+                                <label for="trust2_4">4</label>
+                                <input type="radio" id="trust2_5" name="trust2" value="5">
+                                <label for="trust2_5">5</label>
+                                <input type="radio" id="trust2_6" name="trust2" value="6">
+                                <label for="trust2_6">6</label>
+                                <input type="radio" id="trust2_7" name="trust2" value="7">
+                                <label for="trust2_7">7</label>
+                            </div>
+                            <span class="scale-label">매우 신뢰한다</span>
+                        </div>
+                    </div>
+
+                    <div class="question-sub">
+                        <label>9-3. 리스크를 효과적으로 관리할 것이다</label>
+                        <div class="scale-group">
+                            <span class="scale-label">전혀 신뢰하지 않는다</span>
+                            <div class="scale-options">
+                                <input type="radio" id="trust3_1" name="trust3" value="1">
+                                <label for="trust3_1">1</label>
+                                <input type="radio" id="trust3_2" name="trust3" value="2">
+                                <label for="trust3_2">2</label>
+                                <input type="radio" id="trust3_3" name="trust3" value="3">
+                                <label for="trust3_3">3</label>
+                                <input type="radio" id="trust3_4" name="trust3" value="4">
+                                <label for="trust3_4">4</label>
+                                <input type="radio" id="trust3_5" name="trust3" value="5">
+                                <label for="trust3_5">5</label>
+                                <input type="radio" id="trust3_6" name="trust3" value="6">
+                                <label for="trust3_6">6</label>
+                                <input type="radio" id="trust3_7" name="trust3" value="7">
+                                <label for="trust3_7">7</label>
+                            </div>
+                            <span class="scale-label">매우 신뢰한다</span>
+                        </div>
+                    </div>
+
+                    <div class="question-sub">
+                        <label>9-4. 장기적으로 안정적인 수익을 창출할 것이다</label>
+                        <div class="scale-group">
+                            <span class="scale-label">전혀 신뢰하지 않는다</span>
+                            <div class="scale-options">
+                                <input type="radio" id="trust4_1" name="trust4" value="1">
+                                <label for="trust4_1">1</label>
+                                <input type="radio" id="trust4_2" name="trust4" value="2">
+                                <label for="trust4_2">2</label>
+                                <input type="radio" id="trust4_3" name="trust4" value="3">
+                                <label for="trust4_3">3</label>
+                                <input type="radio" id="trust4_4" name="trust4" value="4">
+                                <label for="trust4_4">4</label>
+                                <input type="radio" id="trust4_5" name="trust4" value="5">
+                                <label for="trust4_5">5</label>
+                                <input type="radio" id="trust4_6" name="trust4" value="6">
+                                <label for="trust4_6">6</label>
+                                <input type="radio" id="trust4_7" name="trust4" value="7">
+                                <label for="trust4_7">7</label>
+                            </div>
+                            <span class="scale-label">매우 신뢰한다</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="question">
+                <label>추가 의견이나 제안사항이 있으시면 자유롭게 작성해주세요:</label>
+                <textarea name="feedback" id="feedback" rows="4" placeholder="의견을 입력해주세요..."></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn">설문조사 제출</button>
+        </form>
+
+        <div id="result" class="result hidden">
+            <h2>설문조사 완료!</h2>
+            <p>소중한 의견 감사합니다.</p>
+            <div id="resultData"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
